@@ -1,0 +1,115 @@
+{% extends 'goku/base.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+<br><br>
+            <div class="row">
+               
+                    <div class="card">
+                        <div class="cardbody">
+                            <h2>Ingreso de Guías</h2>
+                            <hr>
+                    <form method="POST">
+
+                        {% csrf_token %}
+                        <!--Esta es la seccion del Remitente-->
+                        <div class="form-row">
+                            <div class="form-group col-md-6 mb-0">
+                              {{ form.No_guia|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-6 mb-0">
+                              {{ form.Fecha|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-6 mb-0">
+                                {{ form.No_Manifiesto|as_crispy_field }}
+                              </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group codigo_cliente mb-0">
+                              {{ form.Codigo_cliente|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-10 mb-0">
+                              {{ form.Remitente|as_crispy_field }}
+                            </div>
+                          </div>
+                          {{ form.Direccion_remitente|as_crispy_field }}
+                          <div class="form-row hylia">
+                            <div class="form-group col-md-1 mb-0 link">
+                              {{ form.Telefono|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-0 mb-0 link">
+                              {{ form.Zona|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-2 mb-0 link">
+                                {{ form.Municipio|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-0 mb-0 link">
+                                {{ form.Prefijo|as_crispy_field }}
+                            </div>
+                          </div>
+                            <!--Esta es la seccion del destinatario -->
+                              <div class="form-row">
+                                <div class="form-group codigo_cliente mb-0">
+                                  {{ form.Codigo_cliente|as_crispy_field }}
+                                </div>
+                                <div class="form-group col-md-10 mb-0">
+                                  {{ form.Destinatario|as_crispy_field }}
+                                </div>
+                              </div>
+                              {{ form.Direccion_Destinatario|as_crispy_field }}
+                              <div class="form-row hylia">
+                                <div class="form-group col-md-1 mb-0 link">
+                                  {{ form.Telefono|as_crispy_field }}
+                                </div>
+                                <div class="form-group col-md-0 mb-0 link">
+                                  {{ form.Zona|as_crispy_field }}
+                                </div>
+                                <div class="form-group col-md-2 mb-0 link">
+                                    {{ form.Municipio|as_crispy_field }}
+                                </div>
+                                <div class="form-group col-md-0 mb-0 link">
+                                    {{ form.Prefijo|as_crispy_field }}
+                                </div>                                
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group codigo_cliente mb-0">
+                              {{ form.Codigo_cliente|as_crispy_field }}
+                            </div>
+                            <div class="form-group col-md-10 mb-0">
+                              {{ form.Forma_Pago|as_crispy_field }}
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="observacion">
+                              {{ form.Observacines|as_crispy_field }}
+                            </div>
+                            <div class="form-group cantidad mb-0 zelda">
+                              {{ form.cantidad|as_crispy_field }}
+                            </div>
+                            <div class="form-group tipo_envio mb-0 zelda">
+                              {{ form.tipo_envio|as_crispy_field }}
+                            </div>
+                            <div class="form-group descripcion zelda">
+                              {{ form.descripcion|as_crispy_field }}
+                            </div>
+                            <div class="form-group peso mb-0 zelda">
+                                {{ form.peso|as_crispy_field }}
+                            </div>
+                            <div class="form-group tarifa mb-0">
+                                {{ form.tarifa|as_crispy_field }}
+                            </div>
+                          </div>
+                        <div class="d-flex justify-content-end">
+                            <input type="submit" value="Guardar" class="btn btn-primary">
+                            &nbsp;
+                            <input type="reset" value="Cancelar" class="btn btn-secondary">
+                        </div>
+                        
+                    </form>
+                    {{ mensaje }}
+            </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navigation">
+            <div class="toggle"><span></span></div>
+            <ul>
+                <li>
+                    <a href="#" id="left" onclick="uno()">Home</a>
+                    <div id="despliegue" class="despliegue">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="left" onclick="dos()">About</a>
+                    <div id="despliegue2" class="despliegue">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="left" onclick="tres()">Services</a>
+                    <div id="despliegue3" class="despliegue">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="left" onclick="cuatro()">Works</a>
+                    <div id="despliegue4" class="despliegue">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" id="left" onclick="cinco()">Team</a>
+                    <div id="despliegue5" class="despliegue">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <section id="home"></section>
+        <script>
+            const navigation  = document.querySelector('.navigation');
+            const despliegue = document.querySelector('.despliegue');
+            document.querySelector('.toggle').onclick = function() {
+                this.classList.toggle('active');
+                navigation.classList.toggle('active');
+            };
+            document.querySelector('.left').onclick = function () {
+                despliegue.classList.toggle('active');
+            }
+            /*Cuando se hace click en el botón, muestra el submenu*/
+            function uno() {
+                //Añade una clase al elemento que tenga el id myDropdown
+                document.getElementById("despliegue").classList.toggle("show");
+            }
+            function dos() {
+                //Añade una clase al elemento que tenga el id myDropdown
+                document.getElementById("despliegue2").classList.toggle("show");
+            }
+            function tres() {
+                //Añade una clase al elemento que tenga el id myDropdown
+                document.getElementById("despliegue3").classList.toggle("show");
+            }
+            function cuatro() {
+                //Añade una clase al elemento que tenga el id myDropdown
+                document.getElementById("despliegue4").classList.toggle("show");
+            }
+            function cinco() {
+                //Añade una clase al elemento que tenga el id myDropdown
+                document.getElementById("despliegue5").classList.toggle("show");
+            }
+        </script>
+    </body>
+</html>
